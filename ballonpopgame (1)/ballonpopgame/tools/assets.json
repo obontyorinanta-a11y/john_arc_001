@@ -1,0 +1,536 @@
+{
+  "_readme": [
+    "Job list for prepare_assets.py.  One entry per exported sprite.",
+    "crop is [x, y, width, height] measured from the TOP-LEFT of the source image.",
+    "Run  python prepare_assets.py --probe source_art/<file>  to see a source image size.",
+    "Check tools/preview/ after every run to see the cutouts on a checkerboard."
+  ],
+  "output_dir": "../demo/demo/Assets",
+  "header_dir": "../demo/demo",
+  "jobs": [
+    {
+      "src": "source_art/joan_turnaround.jpg",
+      "out": "joan_side_00",
+      "category": "player",
+      "crop": [
+        758,
+        15,
+        572,
+        1105
+      ],
+      "remove_bg": true,
+      "tolerance": 62,
+      "feather": 20,
+      "trim": true,
+      "max_size": 512,
+      "_note": "side view, used as the in-game player sprite. Art faces LEFT, the game mirrors it when she walks right.",
+      "local_tolerance": 16,
+      "edge_block": 9
+    },
+    {
+      "src": "source_art/joan_turnaround.jpg",
+      "out": "joan_portrait",
+      "category": "ui",
+      "crop": [
+        95,
+        15,
+        470,
+        1105
+      ],
+      "remove_bg": true,
+      "tolerance": 62,
+      "feather": 20,
+      "trim": true,
+      "max_size": 512,
+      "_note": "front view, used on the menu and the HUD portrait.",
+      "local_tolerance": 16,
+      "edge_block": 9
+    },
+    {
+      "src": "source_art/enemy_brute.jpg",
+      "out": "brute_idle_00",
+      "category": "enemy",
+      "crop": null,
+      "remove_bg": true,
+      "bg_color": [
+        255,
+        255,
+        255
+      ],
+      "tolerance": 34,
+      "feather": 16,
+      "trim": true,
+      "max_size": 256,
+      "_note": "white background. Tolerance stays low so the white parts of the armour survive.",
+      "local_tolerance": 22
+    },
+    {
+      "src": "source_art/battlefield.jpg",
+      "out": "field_orleans",
+      "category": "background",
+      "crop": null,
+      "remove_bg": false,
+      "trim": false,
+      "max_size": 0,
+      "_note": "scrolling level background, keeps its own sky."
+    },
+    {
+      "src": "source_art/intro_poster.jpg",
+      "out": "intro_poster",
+      "category": "ui",
+      "crop": [
+        460,
+        300,
+        1019,
+        573
+      ],
+      "remove_bg": false,
+      "trim": false,
+      "max_size": 0,
+      "_note": "main menu / intro background. Cropped to 16:9 on the battle scene; the crop deliberately excludes the printed titles and publisher marks of the source poster."
+    },
+    {
+      "src": "source_art/campaign_map.jpg",
+      "out": "campaign_map",
+      "category": "ui",
+      "crop": null,
+      "remove_bg": false,
+      "trim": false,
+      "max_size": 0,
+      "_note": "Kingdom of France campaign map, used full-bleed behind the level select screen. 1600x900 = exactly 16:9, so it is never distorted."
+    },
+    {
+      "src": "source_art/joan_run_00.png",
+      "out": "joan_run_00",
+      "category": "player",
+      "crop": null,
+      "remove_bg": false,
+      "trim": false,
+      "max_size": 256,
+      "_note": "run cycle frame 0 of 12. Source already has alpha; trim MUST stay false or frames drift.",
+      "key_white": 215,
+      "key_feather": 3
+    },
+    {
+      "src": "source_art/joan_run_01.png",
+      "out": "joan_run_01",
+      "category": "player",
+      "crop": null,
+      "remove_bg": false,
+      "trim": false,
+      "max_size": 256,
+      "_note": "run cycle frame 1 of 12. Source already has alpha; trim MUST stay false or frames drift.",
+      "key_white": 215,
+      "key_feather": 3
+    },
+    {
+      "src": "source_art/joan_run_02.png",
+      "out": "joan_run_02",
+      "category": "player",
+      "crop": null,
+      "remove_bg": false,
+      "trim": false,
+      "max_size": 256,
+      "_note": "run cycle frame 2 of 12. Source already has alpha; trim MUST stay false or frames drift.",
+      "key_white": 215,
+      "key_feather": 3
+    },
+    {
+      "src": "source_art/joan_run_03.png",
+      "out": "joan_run_03",
+      "category": "player",
+      "crop": null,
+      "remove_bg": false,
+      "trim": false,
+      "max_size": 256,
+      "_note": "run cycle frame 3 of 12. Source already has alpha; trim MUST stay false or frames drift.",
+      "key_white": 215,
+      "key_feather": 3
+    },
+    {
+      "src": "source_art/joan_run_04.png",
+      "out": "joan_run_04",
+      "category": "player",
+      "crop": null,
+      "remove_bg": false,
+      "trim": false,
+      "max_size": 256,
+      "_note": "run cycle frame 4 of 12. Source already has alpha; trim MUST stay false or frames drift.",
+      "key_white": 215,
+      "key_feather": 3
+    },
+    {
+      "src": "source_art/joan_run_05.png",
+      "out": "joan_run_05",
+      "category": "player",
+      "crop": null,
+      "remove_bg": false,
+      "trim": false,
+      "max_size": 256,
+      "_note": "run cycle frame 5 of 12. Source already has alpha; trim MUST stay false or frames drift.",
+      "key_white": 215,
+      "key_feather": 3
+    },
+    {
+      "src": "source_art/joan_run_06.png",
+      "out": "joan_run_06",
+      "category": "player",
+      "crop": null,
+      "remove_bg": false,
+      "trim": false,
+      "max_size": 256,
+      "_note": "run cycle frame 6 of 12. Source already has alpha; trim MUST stay false or frames drift.",
+      "key_white": 215,
+      "key_feather": 3
+    },
+    {
+      "src": "source_art/joan_run_07.png",
+      "out": "joan_run_07",
+      "category": "player",
+      "crop": null,
+      "remove_bg": false,
+      "trim": false,
+      "max_size": 256,
+      "_note": "run cycle frame 7 of 12. Source already has alpha; trim MUST stay false or frames drift.",
+      "key_white": 215,
+      "key_feather": 3
+    },
+    {
+      "src": "source_art/joan_run_08.png",
+      "out": "joan_run_08",
+      "category": "player",
+      "crop": null,
+      "remove_bg": false,
+      "trim": false,
+      "max_size": 256,
+      "_note": "run cycle frame 8 of 12. Source already has alpha; trim MUST stay false or frames drift.",
+      "key_white": 215,
+      "key_feather": 3
+    },
+    {
+      "src": "source_art/joan_run_09.png",
+      "out": "joan_run_09",
+      "category": "player",
+      "crop": null,
+      "remove_bg": false,
+      "trim": false,
+      "max_size": 256,
+      "_note": "run cycle frame 9 of 12. Source already has alpha; trim MUST stay false or frames drift.",
+      "key_white": 215,
+      "key_feather": 3
+    },
+    {
+      "src": "source_art/joan_run_10.png",
+      "out": "joan_run_10",
+      "category": "player",
+      "crop": null,
+      "remove_bg": false,
+      "trim": false,
+      "max_size": 256,
+      "_note": "run cycle frame 10 of 12. Source already has alpha; trim MUST stay false or frames drift.",
+      "key_white": 215,
+      "key_feather": 3
+    },
+    {
+      "src": "source_art/joan_run_11.png",
+      "out": "joan_run_11",
+      "category": "player",
+      "crop": null,
+      "remove_bg": false,
+      "trim": false,
+      "max_size": 256,
+      "_note": "run cycle frame 11 of 12. Source already has alpha; trim MUST stay false or frames drift.",
+      "key_white": 215,
+      "key_feather": 3
+    },
+    {
+      "src": "source_art/joan_swordup.jpg",
+      "out": "joan_swordup",
+      "category": "player",
+      "crop": null,
+      "remove_bg": true,
+      "bg_color": [
+        255,
+        255,
+        255
+      ],
+      "tolerance": 62,
+      "feather": 20,
+      "local_tolerance": 16,
+      "trim": true,
+      "max_size": 384,
+      "_note": "sword raised - wind-up half of the swing. Faces right.",
+      "edge_block": 9,
+      "key_white": 215,
+      "key_feather": 3
+    },
+    {
+      "src": "source_art/joan_sworddown.jpg",
+      "out": "joan_sworddown",
+      "category": "player",
+      "crop": null,
+      "remove_bg": true,
+      "bg_color": [
+        255,
+        255,
+        255
+      ],
+      "tolerance": 62,
+      "feather": 20,
+      "local_tolerance": 16,
+      "trim": true,
+      "max_size": 384,
+      "_note": "sword down - strike half of the swing. Faces right.",
+      "edge_block": 9,
+      "key_white": 215,
+      "key_feather": 3
+    },
+    {
+      "src": "source_art/soldier_swordup.jpg",
+      "out": "soldier_swordup",
+      "category": "enemy",
+      "crop": null,
+      "remove_bg": true,
+      "bg_color": [
+        255,
+        255,
+        255
+      ],
+      "tolerance": 62,
+      "feather": 20,
+      "local_tolerance": 16,
+      "trim": true,
+      "max_size": 320,
+      "_note": "English soldier, sword raised. Drawn during the attack wind-up. Faces left.",
+      "edge_block": 9
+    },
+    {
+      "src": "source_art/soldier_sworddown.jpg",
+      "out": "soldier_sworddown",
+      "category": "enemy",
+      "crop": [
+        0,
+        0,
+        1351,
+        628
+      ],
+      "remove_bg": true,
+      "bg_color": [
+        255,
+        255,
+        255
+      ],
+      "tolerance": 36,
+      "feather": 16,
+      "local_tolerance": 22,
+      "trim": true,
+      "max_size": 320,
+      "_note": "English soldier, guard stance. Walk and idle pose. Faces left. Cropped at row 628: it removes the stone base the figure was drawn on AND opens the pocket of background between his legs to the image border, so the flood fill can actually reach it."
+    },
+    {
+      "src": "source_art/commander_idle.png",
+      "out": "commander_idle",
+      "category": "boss",
+      "crop": null,
+      "remove_bg": true,
+      "bg_color": [
+        255,
+        255,
+        255
+      ],
+      "tolerance": 62,
+      "feather": 20,
+      "local_tolerance": 16,
+      "trim": true,
+      "max_size": 512,
+      "_note": "the English commander. Banner-carrying knight, drawn at 2.35x soldier scale.",
+      "edge_block": 9
+    },
+    {
+      "src": "source_art/archer_run_00.png",
+      "out": "archer_run_00",
+      "category": "player",
+      "crop": null,
+      "remove_bg": false,
+      "trim": false,
+      "max_size": 256,
+      "_note": "level 02 archer, run cycle frame 0 of 5. Shared canvas - do not trim."
+    },
+    {
+      "src": "source_art/archer_run_01.png",
+      "out": "archer_run_01",
+      "category": "player",
+      "crop": null,
+      "remove_bg": false,
+      "trim": false,
+      "max_size": 256,
+      "_note": "level 02 archer, run cycle frame 1 of 5. Shared canvas - do not trim."
+    },
+    {
+      "src": "source_art/archer_run_02.png",
+      "out": "archer_run_02",
+      "category": "player",
+      "crop": null,
+      "remove_bg": false,
+      "trim": false,
+      "max_size": 256,
+      "_note": "level 02 archer, run cycle frame 2 of 5. Shared canvas - do not trim."
+    },
+    {
+      "src": "source_art/archer_run_03.png",
+      "out": "archer_run_03",
+      "category": "player",
+      "crop": null,
+      "remove_bg": false,
+      "trim": false,
+      "max_size": 256,
+      "_note": "level 02 archer, run cycle frame 3 of 5. Shared canvas - do not trim."
+    },
+    {
+      "src": "source_art/archer_run_04.png",
+      "out": "archer_run_04",
+      "category": "player",
+      "crop": null,
+      "remove_bg": false,
+      "trim": false,
+      "max_size": 256,
+      "_note": "level 02 archer, run cycle frame 4 of 5. Shared canvas - do not trim."
+    },
+    {
+      "src": "source_art/archer_shoot_00.png",
+      "out": "archer_shoot_00",
+      "category": "player",
+      "crop": null,
+      "remove_bg": false,
+      "trim": false,
+      "max_size": 256,
+      "_note": "level 02 archer, shoot frame 0 of 4: lift, nock, full draw, release."
+    },
+    {
+      "src": "source_art/archer_shoot_01.png",
+      "out": "archer_shoot_01",
+      "category": "player",
+      "crop": null,
+      "remove_bg": false,
+      "trim": false,
+      "max_size": 256,
+      "_note": "level 02 archer, shoot frame 1 of 4: lift, nock, full draw, release."
+    },
+    {
+      "src": "source_art/archer_shoot_02.png",
+      "out": "archer_shoot_02",
+      "category": "player",
+      "crop": null,
+      "remove_bg": false,
+      "trim": false,
+      "max_size": 256,
+      "_note": "level 02 archer, shoot frame 2 of 4: lift, nock, full draw, release."
+    },
+    {
+      "src": "source_art/archer_shoot_03.png",
+      "out": "archer_shoot_03",
+      "category": "player",
+      "crop": null,
+      "remove_bg": false,
+      "trim": false,
+      "max_size": 256,
+      "_note": "level 02 archer, shoot frame 3 of 4: lift, nock, full draw, release."
+    },
+    {
+      "src": "source_art/arrow_bolt.png",
+      "out": "arrow_bolt",
+      "category": "items",
+      "crop": null,
+      "remove_bg": false,
+      "trim": true,
+      "max_size": 64,
+      "_note": "the player's arrow. Already has alpha. Points right."
+    },
+    {
+      "src": "source_art/hydra.png",
+      "out": "hydra",
+      "category": "boss",
+      "crop": null,
+      "remove_bg": true,
+      "bg_color": [
+        242,
+        242,
+        242
+      ],
+      "tolerance": 58,
+      "feather": 18,
+      "local_tolerance": 16,
+      "edge_block": 9,
+      "trim": true,
+      "max_size": 512,
+      "_note": "the level 02 boss. Three heads, faces LEFT, so it is drawn unmirrored facing the player who arrives from the left.",
+      "key_white": 225,
+      "key_feather": 3
+    },
+    {
+      "src": "source_art/fireball.jpg",
+      "out": "fireball",
+      "category": "effects",
+      "crop": null,
+      "remove_bg": false,
+      "trim": true,
+      "max_size": 256,
+      "key_grey_sat": 30,
+      "key_grey_val": 120,
+      "key_feather": 2,
+      "_note": "hydra fireball. Source ships with a baked-in checkerboard, removed by the neutral-colour key rather than the flood fill. Points RIGHT, so the game mirrors it to fly left at the player."
+    },
+    {
+      "src": "source_art/montclair.png",
+      "out": "montclair",
+      "category": "background",
+      "crop": null,
+      "remove_bg": false,
+      "trim": false,
+      "max_size": 1280,
+      "_note": "level 02 background: the Montclair at dusk. 1492x1054, so it is panned as one copy rather than tiled."
+    },
+    {
+      "src": "source_art/heavy_swordup.jpg",
+      "out": "heavy_swordup",
+      "category": "enemy",
+      "crop": null,
+      "remove_bg": true,
+      "bg_color": [
+        255,
+        255,
+        255
+      ],
+      "tolerance": 62,
+      "feather": 20,
+      "local_tolerance": 16,
+      "edge_block": 9,
+      "trim": true,
+      "max_size": 320,
+      "key_white": 222,
+      "key_feather": 3,
+      "_note": "level 02 heavy, sword raised. Drawn during the attack wind-up. Faces left."
+    },
+    {
+      "src": "source_art/heavy_sworddown.jpg",
+      "out": "heavy_sworddown",
+      "category": "enemy",
+      "crop": null,
+      "remove_bg": true,
+      "bg_color": [
+        255,
+        255,
+        255
+      ],
+      "tolerance": 62,
+      "feather": 20,
+      "local_tolerance": 16,
+      "edge_block": 9,
+      "trim": true,
+      "max_size": 320,
+      "key_white": 222,
+      "key_feather": 3,
+      "_note": "level 02 heavy, guard stance. Walk and idle pose. Faces left."
+    }
+  ]
+}

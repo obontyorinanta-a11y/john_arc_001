@@ -1,0 +1,100 @@
+#include <cstdio>
+#include <cstdlib>
+#include <ctime>
+#include "iGraphics.h"
+#include "Utils.hpp"
+
+const int MAX = 5;
+
+int bx[MAX], by[MAX], bs[MAX];      // position ar size
+int br[MAX], bg[MAX], bb[MAX];      // color
+int life[MAX];                      // ei box ar koto tick bachbe
+
+int total;                          // 3 - 5 ta box
+int score = 0, miss = 0;
+char text[50];
+
+// i tomo box ke notun jaygay, notun color, notun size, notun time e boshai
+void spawn(int i)
+{
+	bs[i] = 40 + rand() % 50;                          // alada size
+	bx[i] = rand() % (SCREEN_WIDTH - bs[i]);
+	by[i] = rand() % (SCREEN_HEIGHT - bs[i] - 100);
+	br[i] = 80 + rand() % 176;                         // alada color
+	bg[i] = 80 + rand() % 176;
+	bb[i] = 80 + rand() % 176;
+	life[i] = 100 + rand() % 200;                      // alada disappear time
+}
+
+void iDraw()
+{
+	iClear();
+
+	if (score >= 10 || miss >= 10) {
+		iSetColor(0, 0, 0);
+		iFilledRectangle(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+		iSetColor(255, 255, 255);
+		iText(SCREEN_WIDTH / 2 - 55, SCREEN_HEIGHT / 2,
+			score >= 10 ? "You Win" : "Game Over", GLUT_BITMAP_TIMES_ROMAN_24);
+		return;
+	}
+
+	iSetColor(30, 30, 30);
+	iFilledRectangle(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+
+	for (int i = 0; i < total; i++) {
+		iSetColor(br[i], bg[i], bb[i]);
+		iFilledRectangle(bx[i], by[i], bs[i], bs[i]);
+	}
+
+	// score - top right
+	iSetColor(255, 255, 255);
+	sprintf_s(text, "SCORE : %d", score);
+	iText(SCREEN_WIDTH - 180, SCREEN_HEIGHT - 40, text, GLUT_BITMAP_TIMES_ROMAN_24);
+	sprintf_s(text, "MISS : %d", miss);
+	iText(SCREEN_WIDTH - 180, SCREEN_HEIGHT - 70, text, GLUT_BITMAP_TIMES_ROMAN_24);
+}
+
+void iMouse(int button, int state, int mx, int my)
+{
+	if (score >= 10 || miss >= 10) return;
+
+	if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
+		for (int i = 0; i < total; i++) {
+			if (mx > bx[i] && mx < bx[i] + bs[i] && my > by[i] && my < by[i] + bs[i]) {
+				score++;
+				spawn(i);        // shudhu ei box ta bodlabe
+				break;           // ek click e ek box
+			}
+		}
+	}
+}
+
+void iMouseMove(int mx, int my) {}
+void iPassiveMouseMove(int mx, int my) {}
+void fixedUpdate() {}
+
+void update()
+{
+	if (score >= 10 || miss >= 10) return;
+
+	for (int i = 0; i < total; i++) {
+		life[i]--;
+		if (life[i] <= 0) {      // click korar age miliye gelo
+			miss++;
+			spawn(i);
+		}
+	}
+}
+
+int main()
+{
+	srand(time(0));
+	total = 3 + rand() % 3;                  // 3, 4 ba 5 ta box
+	for (int i = 0; i < total; i++) spawn(i);
+
+	iSetTimer(10, update);
+	iInitialize(SCREEN_WIDTH, SCREEN_HEIGHT, "Random Box Click");
+	iStart();
+	return 0;
+}
